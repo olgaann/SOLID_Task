@@ -33,6 +33,6 @@ public class Main {
             basket.addPurchase(new Purchase(product, count));
         }
 
-        basket.finalPrint(products); //метод вывода итоговой корзины создан в классе Basket (принцип единственной ответственности)
+        basket.finalPrint(store); //метод вывода итоговой корзины создан в классе Basket (принцип единственной ответственности)
     }
 }

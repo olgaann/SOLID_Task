@@ -21,14 +21,14 @@ public class Basket {
         }
     }
 
-    public int totalSum(Map<String, Integer> products) { //изменено название параметра с prices на products во избежание путаницы
+    public int totalSum(Store store) { // параметр изменен на Store
         int sum = 0;
         Purchase purchase;
         System.out.println("КОРЗИНА:");
         for (int i = 0; i < purchases.length; i++) {
             purchase = purchases[i];
             if (purchase == null) break; //можно сразу прервать цикл и вернуть 0, не делая лишних итераций
-            int currentSum = purchase.purchaseSum(products);
+            int currentSum = purchase.purchaseSum(store);
             System.out.println("\t" + purchase.title + " " + purchase.count + " шт. в сумме " + currentSum + " руб.");
             sum += currentSum;
         }
@@ -36,7 +36,7 @@ public class Basket {
     }
 
 
-    public void finalPrint(Map<String, Integer> products) { //добавлен отдельный метод вывода итоговой покупки на экран, чтобы не загромождать класс Main
-        System.out.println("Итого: " + this.totalSum(products));
+    public void finalPrint(Store store) { //добавлен отдельный метод вывода итоговой покупки на экран, чтобы не загромождать класс Main
+        System.out.println("Итого: " + this.totalSum(store));
     }
 }
